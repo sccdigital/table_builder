@@ -46,7 +46,7 @@ module CalendarHelper
     
     def td_options(day, id_pattern, activity_class)
       options = {}
-      if(day.strftime("%Y-%m-%d") ==  @today.strftime("%Y-%m-%d"))
+      if(day.strftime("%m-%d") ==  @today.strftime("%m-%d"))
         options[:class] = 'today'
       elsif(day.month != @calendar.month)
         options[:class] = 'notmonth'
@@ -101,9 +101,9 @@ module CalendarHelper
     def objects_for_days(objects, day_method)
       unless @objects_for_days
         @objects_for_days = {}
-        days.each{|day| @objects_for_days[day.strftime("%Y-%m-%d")] = [day, []]}
+        days.each{|day| @objects_for_days[day.strftime("%m-%d")] = [day, []]}
         objects.each do |o|
-          date = o.send(day_method.to_sym).strftime("%Y-%m-%d")
+          date = o.send(day_method.to_sym).strftime("%m-%d")
           if @objects_for_days[date]
             @objects_for_days[date][1] << o
           end
