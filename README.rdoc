@@ -1,4 +1,9 @@
-== About this fork
+== About this fork - sccdigital
+
+This fork was created so that we could easily generate a 365 day calendar that loops around.
+
+
+== About this fork - from jchunky
 
 I forked http://github.com/wizardwerdna/table_builder to convert it from a plugin to a gem.
 
